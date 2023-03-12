@@ -10,6 +10,7 @@ import { NavbarComponent } from './components/header/navbar/navbar.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { MainComponent } from './components/main/main.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
+import { ContactComponent } from './components/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { NotfoundComponent } from './components/notfound/notfound.component';
     NavbarComponent,
     SidebarComponent,
     MainComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
