@@ -30,15 +30,49 @@
         <div class="col">
           <div ngbDropdown class="d-inline-block">
             <a class="nav-link" id="dropdownBasic1" ngbDropdownToggle>
-              Toggle dropdown
+              Modal
             </a>
             <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-              <button ngbDropdownItem>Action - 1</button>
-              <button ngbDropdownItem>Another Action</button>
-              <button ngbDropdownItem>Something else is here</button>
+              <button ngbDropdownItem routerLink="/modal">Modal</button>
             </div>
           </div>
         </div>
-      </div>    
+      </div>
+      <div class="row pt-2">
+        <div class="col">
+          <div ngbDropdown class="d-inline-block">
+            <a class="nav-link" id="dropdownBasic1" ngbDropdownToggle>
+              Product
+            </a>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+              <button ngbDropdownItem routerLink="/product">Product</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row pt-2">
+        <div class="col">
+          <div ngbDropdown class="d-inline-block">
+            <a class="nav-link" id="dropdownBasic1" ngbDropdownToggle>
+              Cart
+            </a>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+              <button ngbDropdownItem routerLink="/cart">Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row pt-2">
+        <div class="col">
+          <div ngbDropdown class="d-inline-block">
+            <a class="nav-link" id="dropdownBasic1" ngbDropdownToggle>
+              About
+            </a>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+              <button ngbDropdownItem routerLink="/about">About</button>
+            </div>
+          </div>
+        </div>
+      </div>     
     </div>
 </div>
