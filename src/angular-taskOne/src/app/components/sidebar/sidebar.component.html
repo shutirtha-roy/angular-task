@@ -1,7 +1,18 @@
-<div class="" style="width: 12%; height: 80%;">
-    
+<div class="p-4" style="width: 12%; height: 80%;">
     <div class="dropdown">
-      <div class="row">
+      <div class="row pt-2">
+        <div class="col">
+          <div ngbDropdown class="d-inline-block">
+            <a class="nav-link" id="dropdownBasic1" ngbDropdownToggle>
+              User
+            </a>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+              <button ngbDropdownItem routerLink="/user">User</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row pt-2">
         <div class="col">
           <div ngbDropdown class="d-inline-block">
             <a class="nav-link" id="dropdownBasic1" ngbDropdownToggle>
@@ -14,31 +25,20 @@
             </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col">
-            <div ngbDropdown class="d-inline-block">
-              <a class="nav-link" id="dropdownBasic1" ngbDropdownToggle>
-                Toggle dropdown
-              </a>
-              <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                <button ngbDropdownItem>Action - 1</button>
-                <button ngbDropdownItem>Another Action</button>
-                <button ngbDropdownItem>Something else is here</button>
-              </div>
+      </div>
+      <div class="row pt-2">
+        <div class="col">
+          <div ngbDropdown class="d-inline-block">
+            <a class="nav-link" id="dropdownBasic1" ngbDropdownToggle>
+              Toggle dropdown
+            </a>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+              <button ngbDropdownItem>Action - 1</button>
+              <button ngbDropdownItem>Another Action</button>
+              <button ngbDropdownItem>Something else is here</button>
+            </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col">
-            <div ngbDropdown class="d-inline-block">
-              <a class="nav-link" id="dropdownBasic1" ngbDropdownToggle>
-                Toggle dropdown
-              </a>
-              <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                <button ngbDropdownItem>Action - 1</button>
-                <button ngbDropdownItem>Another Action</button>
-                <button ngbDropdownItem>Something else is here</button>
-              </div>
-          </div>
-        </div>    
+      </div>    
     </div>
 </div>
