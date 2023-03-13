@@ -5,6 +5,7 @@ import { PagesRoutingModule } from './pages-routing.module';
 import { UserComponent } from './user/user.component';
 import { LanguagesComponent } from './languages/languages.component';
 import { ModalComponent } from './modal/modal.component';
+import { ProductComponent } from './product/product.component';
 
 
 @NgModule({
@@ -12,6 +13,7 @@ import { ModalComponent } from './modal/modal.component';
     UserComponent,
     LanguagesComponent,
     ModalComponent,
+    ProductComponent,
   ],
   imports: [
     CommonModule,

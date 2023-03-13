@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ModalComponent } from './modal/modal.component';
+import { ProductComponent } from './product/product.component';
 import { UserComponent } from './user/user.component';
 
 const routes: Routes = [
@@ -19,6 +20,10 @@ const routes: Routes = [
       {
         path: 'modal',
         component: ModalComponent
+      },
+      {
+        path: 'product',
+        component: ProductComponent
       }
     ]
   }
