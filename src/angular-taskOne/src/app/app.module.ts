@@ -9,6 +9,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SidebarComponent } from './commonCodes/sidebar/sidebar.component';
 import { FooterComponent } from './commonCodes/footer/footer.component';
 import { NotfoundComponent } from './commonCodes/notfound/notfound.component';
+import { AuthComponent } from './auth/auth.component';
 
 @NgModule({
   declarations: [
@@ -16,8 +17,8 @@ import { NotfoundComponent } from './commonCodes/notfound/notfound.component';
     PagesComponent,
     HeadingComponent,
     SidebarComponent,
-    FooterComponent
-    
+    FooterComponent,
+    AuthComponent,    
   ],
   imports: [
     BrowserModule,

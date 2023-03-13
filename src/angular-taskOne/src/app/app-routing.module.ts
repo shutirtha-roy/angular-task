@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
+import { AuthComponent } from './auth/auth.component';
 import { CartComponent } from './cart/cart.component';
 import { NotfoundComponent } from './commonCodes/notfound/notfound.component';
 import { ContactComponent } from './contact/contact.component';
@@ -12,6 +13,12 @@ const routes: Routes = [
     component: PagesComponent,
     loadChildren: () =>
       import('./pages/pages.module').then((m) => m.PagesModule),
+  },
+  {
+    path: 'auth',
+    component: AuthComponent,
+    loadChildren: () =>
+      import('./auth/auth.module').then((m) => m.AuthModule),
   },
   {
     path: 'contact',
