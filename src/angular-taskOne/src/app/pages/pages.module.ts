@@ -4,12 +4,14 @@ import { CommonModule } from '@angular/common';
 import { PagesRoutingModule } from './pages-routing.module';
 import { UserComponent } from './user/user.component';
 import { LanguagesComponent } from './languages/languages.component';
+import { ModalComponent } from './modal/modal.component';
 
 
 @NgModule({
   declarations: [
     UserComponent,
-    LanguagesComponent
+    LanguagesComponent,
+    ModalComponent,
   ],
   imports: [
     CommonModule,
