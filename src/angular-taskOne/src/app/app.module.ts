@@ -10,6 +10,7 @@ import { SidebarComponent } from './commonCodes/sidebar/sidebar.component';
 import { FooterComponent } from './commonCodes/footer/footer.component';
 import { NotfoundComponent } from './commonCodes/notfound/notfound.component';
 import { AuthComponent } from './auth/auth.component';
+import { PaymentComponent } from './payment/payment.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { AuthComponent } from './auth/auth.component';
     HeadingComponent,
     SidebarComponent,
     FooterComponent,
-    AuthComponent,    
+    AuthComponent,
+    PaymentComponent    
   ],
   imports: [
     BrowserModule,

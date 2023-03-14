@@ -6,6 +6,7 @@ import { CartComponent } from './cart/cart.component';
 import { NotfoundComponent } from './commonCodes/notfound/notfound.component';
 import { ContactComponent } from './contact/contact.component';
 import { PagesComponent } from './pages/pages.component';
+import { PaymentComponent } from './payment/payment.component';
 
 const routes: Routes = [
   {
@@ -19,6 +20,12 @@ const routes: Routes = [
     component: AuthComponent,
     loadChildren: () =>
       import('./auth/auth.module').then((m) => m.AuthModule),
+  },
+  {
+    path: 'payment',
+    component: PaymentComponent,
+    loadChildren: () =>
+      import('./payment/payment.module').then((m) => m.PaymentModule),
   },
   {
     path: 'contact',

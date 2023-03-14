@@ -68,10 +68,23 @@
       <div class="col">
         <div ngbDropdown class="d-inline-block">
           <a class="nav-link" id="dropdownBasic1" ngbDropdownToggle>
-            Cart
+            My Cart
           </a>
           <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
             <button ngbDropdownItem routerLink="/cart">Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row pt-2">
+      <div class="col">
+        <div ngbDropdown class="d-inline-block">
+          <a class="nav-link" id="dropdownBasic1" ngbDropdownToggle>
+            Payment
+          </a>
+          <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+            <button ngbDropdownItem routerLink="/payment/bill">Bill</button>
+            <button ngbDropdownItem routerLink="/payment/due">Due</button>
           </div>
         </div>
       </div>
