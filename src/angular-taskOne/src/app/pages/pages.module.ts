@@ -6,6 +6,7 @@ import { UserComponent } from './user/user.component';
 import { LanguagesComponent } from './languages/languages.component';
 import { ModalComponent } from './modal/modal.component';
 import { ProductComponent } from './product/product.component';
+import { StoreComponent } from './store/store.component';
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import { ProductComponent } from './product/product.component';
     LanguagesComponent,
     ModalComponent,
     ProductComponent,
+    StoreComponent,
   ],
   imports: [
     CommonModule,

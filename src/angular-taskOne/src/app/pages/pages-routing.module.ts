@@ -14,6 +14,11 @@ const routes: Routes = [
           import('./languages/languages.module').then((m) => m.LanguagesModule),
       },
       {
+        path: 'store',
+        loadChildren: () =>
+          import('./store/store.module').then((m) => m.StoreModule),
+      },
+      {
         path: 'user',
         component: UserComponent,
       },
