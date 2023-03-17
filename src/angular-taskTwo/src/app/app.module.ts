@@ -8,10 +8,12 @@ import { HeaderComponent } from './shared/components/header/header.component';
 import { SidebarComponent } from './shared/components/sidebar/sidebar.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { NotfoundComponent } from './shared/components/notfound/notfound.component';
+import { PagesComponent } from './pages/pages.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    PagesComponent,
     HeaderComponent,
     SidebarComponent,
     FooterComponent,
