@@ -12,7 +12,7 @@ import { ContactModalComponent } from './contact-modal/contact-modal.component';
 
 @NgModule({
   declarations: [
-    HomeModalComponent,
+    
     ProductModalComponent,
     ImageModalComponent,
     AuthModalComponent,
