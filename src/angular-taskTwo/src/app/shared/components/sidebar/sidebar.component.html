@@ -4,12 +4,7 @@
             <div class="row pt-2">
                 <div class="col">
                     <div ngbDropdown class="d-inline-block">
-                        <a class="nav-link" id="dropdownBasic1" ngbDropdownToggle>
-                            {{ menu }}
-                        </a>
-                        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                            <button ngbDropdownItem [routerLink]="[menu]">{{ menu }}</button>
-                        </div>
+                        <button class="btn" [routerLink]="[menu]" [routerLinkActive]="'active'">{{ menu }}</button>
                     </div>
                 </div>
             </div>
