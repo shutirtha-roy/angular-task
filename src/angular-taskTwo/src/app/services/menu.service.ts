@@ -10,12 +10,12 @@ export class MenuService {
 
   getMenus() : Observable<string[]>{
     return of([
-      'homeModal',
-      'productModal',
-      'imageModal',
-      'authModal',
-      'paymentModal',
-      'contactModal'
+      'home-modal',
+      'product-modal',
+      'image-modal',
+      'auth-modal',
+      'payment-modal',
+      'contact-modal'
     ]);
   }
 }

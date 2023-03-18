@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Title } from '@angular/platform-browser';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-pages',
@@ -7,4 +9,7 @@ import { Component } from '@angular/core';
 })
 export class PagesComponent {
 
+  constructor() { 
+    
+  }
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
+import { Router } from '@angular/router';
 import { MenuService } from 'src/app/services/menu.service';
 
 @Component({
@@ -8,6 +10,7 @@ import { MenuService } from 'src/app/services/menu.service';
 })
 export class SidebarComponent implements OnInit {
   menus: string[] = [];
+  currentRoute!: string;
 
   constructor(private menuService: MenuService) { }
 
