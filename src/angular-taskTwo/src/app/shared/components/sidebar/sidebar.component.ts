@@ -1,22 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-import { Title } from '@angular/platform-browser';
-import { Router } from '@angular/router';
-import { MenuService } from 'src/app/services/menu.service';
+import { Component, Input } from '@angular/core';
+import { IMenu } from 'src/app/data/IMenu';
 
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.css']
 })
-export class SidebarComponent implements OnInit {
-  menus: string[] = [];
+export class SidebarComponent{
+  @Input() menus: IMenu[] = [];
   currentRoute!: string;
 
-  constructor(private menuService: MenuService) { }
+  constructor() { }
 
-  ngOnInit() : void {
-    this.menuService.getMenus().subscribe((data : string[]) =>
-      (this.menus = data)
-    );
-  }
 }
