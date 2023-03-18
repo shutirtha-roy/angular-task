@@ -15,7 +15,8 @@ const routes: Routes = [
   },
   {
     path: 'home-modal',
-    component: HomeModalComponent
+    component: HomeModalComponent,
+    title: 'home-modal'
   },
   {
     path: 'product-modal',

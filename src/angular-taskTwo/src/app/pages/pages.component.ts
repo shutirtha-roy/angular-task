@@ -11,7 +11,6 @@ import { MenuService } from '../services/menu.service';
 })
 export class PagesComponent {
   menus: IMenu[] = [];
-  currentRoute!: string;
 
   constructor(private menuService: MenuService) { }
 

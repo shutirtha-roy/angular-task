@@ -7,11 +7,8 @@ import { Router } from '@angular/router';
   templateUrl: './image-modal.component.html',
   styleUrls: ['./image-modal.component.css']
 })
-export class ImageModalComponent  implements OnInit {
+export class ImageModalComponent {
 
   constructor() { }
-
-  ngOnInit() : void {
-    
-  }
+  
 }
