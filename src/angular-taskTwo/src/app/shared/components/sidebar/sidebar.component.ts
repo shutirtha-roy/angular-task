@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { IMenu } from 'src/app/data/IMenu';
 
 @Component({
@@ -9,7 +10,11 @@ import { IMenu } from 'src/app/data/IMenu';
 export class SidebarComponent{
   @Input() menus: IMenu[] = [];
   currentRoute!: string;
+  title!: string;
 
-  constructor() { }
+  constructor(private titleService: Title) { }
 
+  onChange(title : string) {
+    this.titleService.setTitle(title);
+  }
 }

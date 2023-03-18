@@ -8,13 +8,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./image-modal.component.css']
 })
 export class ImageModalComponent  implements OnInit {
-  currentRoute!: string;
-  
-  constructor(private router: Router, private title: Title) { }
+
+  constructor() { }
 
   ngOnInit() : void {
-    this.currentRoute = `${this.router.url.replace("/", "")}`;
-    this.title.setTitle(this.currentRoute);
-    console.log(this.currentRoute);
+    
   }
 }

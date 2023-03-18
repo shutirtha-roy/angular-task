@@ -7,14 +7,8 @@ import { Router } from '@angular/router';
   templateUrl: './payment-modal.component.html',
   styleUrls: ['./payment-modal.component.css']
 })
-export class PaymentModalComponent  implements OnInit {
-  currentRoute!: string;
+export class PaymentModalComponent{
   
-  constructor(private router: Router, private title: Title) { }
-
-  ngOnInit() : void {
-    this.currentRoute = `${this.router.url.replace("/", "")}`;
-    this.title.setTitle(this.currentRoute);
-    console.log(this.currentRoute);
-  }
+  constructor() { }
+  
 }

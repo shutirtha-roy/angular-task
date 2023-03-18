@@ -4,7 +4,7 @@
             <div class="row pt-2">
                 <div class="col">
                     <div ngbDropdown class="d-inline-block">
-                        <button class="btn" [routerLink]="[menu.path]" [routerLinkActive]="'active'">{{ menu.path }}</button>
+                        <button class="btn" [routerLink]="[menu.path]" [routerLinkActive]="'active'" (click)="onChange(menu.title)">{{ menu.path }}</button>
                     </div>
                 </div>
             </div>
