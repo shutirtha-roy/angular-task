@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Title } from '@angular/platform-browser';
-import { Router } from '@angular/router';
+import { Component } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-payment-modal',
@@ -8,7 +7,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./payment-modal.component.css']
 })
 export class PaymentModalComponent{
-  
-  constructor() { }
-  
+  constructor(private modalService: NgbModal) {}
+
+  openVerticallyCentered(content : any) {
+		this.modalService.open(content, { centered: true });
+	}
 }

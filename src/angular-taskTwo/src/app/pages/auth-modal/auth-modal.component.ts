@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-auth-modal',
@@ -7,6 +8,9 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class AuthModalComponent{  
 
-  constructor() { }
-  
+	constructor(private modalService: NgbModal) {}
+
+  openVerticallyCentered(content : any) {
+		this.modalService.open(content, { centered: true });
+	}
 }
