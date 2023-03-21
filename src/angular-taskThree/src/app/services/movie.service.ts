@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { IMovie } from '../../assets/data/IMovie';
 import { Movie } from '../../assets/data/Movie';
@@ -7,17 +7,16 @@ import { Guid } from "guid-typescript";
 @Injectable({
   providedIn: 'root'
 })
-export class MovieService {
+export class MovieService implements OnInit {
   moviesList: IMovie[] = [];
 
   constructor() { 
   }
 
-  setMovies() : Observable<IMovie[]>{
+  ngOnInit() : void {
     this.moviesList.push(new Movie({ id: Guid.create().toString(), title: "", photoUpload: "", subtitle: "", description: ""}));
     this.moviesList.push(new Movie({ id: Guid.create().toString(), title: "", photoUpload: "", subtitle: "", description: ""}));
     this.moviesList.push(new Movie({ id: Guid.create().toString(), title: "", photoUpload: "", subtitle: "", description: ""}));
-    return of(this.moviesList);
   }
 
   getMovies() : Observable<IMovie[]>{
