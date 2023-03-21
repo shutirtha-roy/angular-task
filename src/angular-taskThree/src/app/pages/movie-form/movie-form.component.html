@@ -1,0 +1,25 @@
+<div class="mt-4">
+    <form (ngSubmit)="onSubmit(myForm)" #myForm="ngForm">
+      <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input type="text" class="form-control" id="title" name="title" ngModel/>
+      </div>
+
+      <div class="mb-3">
+        <label for="photoUpload" class="form-label">PhotoUpload</label>
+        <input type="text" class="form-control" id="photoUpload" name="photoUpload" ngModel/>
+      </div>
+
+      <div class="mb-3">
+        <label for="subtitle" class="form-label">Subtitle</label>
+        <input type="text" class="form-control" id="subtitle" name="subtitle" ngModel/>
+      </div>
+
+      <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <input type="password" class="form-control" id="description" name="description" ngModel/>
+      </div>
+  
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
