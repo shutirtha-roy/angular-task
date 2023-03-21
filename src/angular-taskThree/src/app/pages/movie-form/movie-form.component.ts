@@ -12,5 +12,7 @@ export class MovieFormComponent {
 
   onSubmit(form: NgForm) {
     console.log(form.value);
+    if(form.invalid)
+      console.log("Invalid xD");
   }
 }

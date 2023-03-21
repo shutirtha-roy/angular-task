@@ -2,7 +2,10 @@
     <form (ngSubmit)="onSubmit(myForm)" #myForm="ngForm">
       <div class="mb-3">
         <label for="title" class="form-label">Title</label>
-        <input type="text" class="form-control" id="title" name="title" ngModel/>
+        <input type="text" class="form-control" id="title" #title="ngModel" name="title"
+            minlength="10" maxlength="12" required ngModel/>
+        <small *ngIf="title.touched && title.invalid" 
+           class="text-danger">*Title length must be between 10 and 12</small>
       </div>
 
       <div class="mb-3">
@@ -12,12 +15,18 @@
 
       <div class="mb-3">
         <label for="subtitle" class="form-label">Subtitle</label>
-        <input type="text" class="form-control" id="subtitle" name="subtitle" ngModel/>
+        <input type="text" class="form-control" id="subtitle" #subtitle="ngModel" name="subtitle" 
+            minlength="50" maxlength="1000" required ngModel/>
+        <small *ngIf="subtitle.touched && subtitle.invalid" 
+            class="text-danger">*Subtitle length must be between 50 and 1000</small>
       </div>
 
       <div class="mb-3">
         <label for="description" class="form-label">Description</label>
-        <input type="password" class="form-control" id="description" name="description" ngModel/>
+        <input type="text" class="form-control" id="description" #description="ngModel" name="description" 
+            minlength="50" maxlength="1000" required ngModel/>
+        <small *ngIf="description.touched && description.invalid" 
+            class="text-danger">*Subtitle length must be between 50 and 1000</small>
       </div>
   
       <button type="submit" class="btn btn-primary">Submit</button>
