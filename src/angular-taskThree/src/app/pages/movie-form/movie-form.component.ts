@@ -29,7 +29,7 @@ export class MovieFormComponent {
     console.log(this.searchValue);
     this.filteredList = [];
     this.movieList.forEach(movie => {
-      if(movie.title.toLowerCase().startsWith(this.searchValue))
+      if(movie.title.toLowerCase().includes(this.searchValue.toLowerCase()))
       {
           this.filteredList.push(movie);
         
@@ -43,7 +43,7 @@ export class MovieFormComponent {
     let fileSize: number = this.file.size / 1024;
     let fileExtension: string = this.file.name.split('.')[1];
 
-    if(form.value.title.length >= 2 && form.value.title.length <= 12)
+    if(form.value.title.length >= 10 && form.value.title.length <= 12)
     {
       this.hasWrongTitleFormat = false;
     }
