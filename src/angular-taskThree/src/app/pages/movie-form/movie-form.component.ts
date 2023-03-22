@@ -10,11 +10,20 @@ import { Observable, Subscriber } from 'rxjs';
 export class MovieFormComponent {
   file: any;
   base64code!: any;
+  hasWrongFileSize: boolean = false;
 
   constructor() { }
 
   onSubmit(form: NgForm) {
     console.log(form.value);
+
+    console.log(this.file.size / 1024);
+    let fileSize: number = this.file.size / 1024;
+
+    if(fileSize > 200)
+    {
+      this.hasWrongFileSize = true;
+    }
     
 
     if(form.invalid)
@@ -29,8 +38,13 @@ export class MovieFormComponent {
     console.log(this.file.name);
     console.log(this.file.size);
 
-    
-
+    if(this.file.size < 47)
+    {
+      this.hasWrongFileSize = true;
+      return;
+    }
+      
+    this.hasWrongFileSize = false;
     this.convertToBase64(this.file);
   }
 
