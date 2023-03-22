@@ -18,8 +18,26 @@ export class MovieFormComponent {
   hasWrongDescriptionFormat: boolean = false;
   fileExtensionList: string[] = ['png', 'jpg'];
   movieList: IMovie[] = this.movieService.moviesList;
+  filteredList: IMovie[] = [];
+  searchValue: string = '';
+  hasSearched: boolean = false;
 
   constructor(private movieService: MovieService) { }
+
+  changeSearchValue(eventData: Event) {
+    this.searchValue = (<HTMLInputElement>eventData.target).value;
+    console.log(this.searchValue);
+    this.filteredList = [];
+    this.movieList.forEach(movie => {
+      if(movie.title.toLowerCase().startsWith(this.searchValue))
+      {
+          this.filteredList.push(movie);
+        
+      }
+    });
+
+    this.hasSearched = true;
+  }
 
   onSubmit(form: NgForm) {
     let fileSize: number = this.file.size / 1024;
@@ -67,6 +85,7 @@ export class MovieFormComponent {
     }
     
     this.movieService.createMovie(form.value.title, this.base64code, form.value.subtitle, form.value.description);
+    this.hasSearched = false;
   }
 
   getImage(event: any)

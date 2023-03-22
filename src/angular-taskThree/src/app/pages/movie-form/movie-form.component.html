@@ -1,7 +1,23 @@
+<div class="mt-4">
+  <h2 class="text-center">Search Movie</h2>
+  <input type="text" class="w-100" (input)="changeSearchValue($event)" placeholder="Enter your required movie" />
+  <br />
+  <span>You are searching: {{ searchValue }}</span>
+</div>
 
-
-<div class="mt-4 d-flex">
+<div class="mt-4 d-flex" *ngIf="!hasSearched">
   <div class="card m-1" *ngFor="let movie of movieList" style="width: 18rem;">
+    <img [src]="movie.photoUpload" class="card-img-top" width="30px" height="100px" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{ movie.title }}</h5>
+      <p class="card-text">Subtitle: {{ movie.subtitle }}</p>
+      <p class="card-text">Description: {{ movie.description }}</p>
+    </div>
+  </div>
+</div>
+
+<div class="mt-4 d-flex" *ngIf="hasSearched">
+  <div class="card m-1" *ngFor="let movie of filteredList" style="width: 18rem;">
     <img [src]="movie.photoUpload" class="card-img-top" width="30px" height="100px" alt="...">
     <div class="card-body">
       <h5 class="card-title">{{ movie.title }}</h5>
