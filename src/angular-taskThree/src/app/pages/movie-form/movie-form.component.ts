@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Observable, Subscriber } from 'rxjs';
+import { MovieService } from 'src/app/services/movie.service';
 
 @Component({
   selector: 'app-movie-form',
@@ -13,7 +14,7 @@ export class MovieFormComponent {
   hasWrongFileFormat: boolean = false;
   fileExtensionList: string[] = ['png', 'jpg'];
 
-  constructor() { }
+  constructor(private movieService: MovieService) { }
 
   onSubmit(form: NgForm) {
     let fileSize: number = this.file.size / 1024;
@@ -26,8 +27,12 @@ export class MovieFormComponent {
     else 
     {
       this.hasWrongFileFormat = true;
+      return;
     }
+    
+    this.movieService.createMovie(form.value.title, this.base64code, form.value.subtitle, form.value.description);
 
+    console.log(this.movieService.moviesList);
   }
 
   getImage(event: any)
