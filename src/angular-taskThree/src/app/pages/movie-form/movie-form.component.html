@@ -33,7 +33,7 @@
         <label for="title" class="form-label">Title</label>
         <input type="text" class="form-control" id="title" #title="ngModel" name="title"
             minlength="10" maxlength="12" required ngModel/>
-        <small *ngIf="title.touched && title.invalid" 
+        <small *ngIf="(title.touched && title.invalid) || hasWrongTitleFormat" 
            class="text-danger">*Title length must be between 10 and 12</small>
       </div>
 
@@ -42,14 +42,14 @@
         <input type="file" (change)="getImage($event)" class="form-control" id="photoUpload" 
         name="photoUpload" #photoUpload="ngModel" ngModel size="4" required ngModel/>
         <small *ngIf="hasWrongFileFormat" 
-            class="text-danger">*Image size must be exceed 200kb.</small>
+            class="text-danger">*Image size must not be exceed 200kb.</small>
       </div>
 
       <div class="mb-3">
         <label for="subtitle" class="form-label">Subtitle</label>
         <input type="text" class="form-control" id="subtitle" #subtitle="ngModel" name="subtitle" 
             minlength="50" maxlength="1000" required ngModel/>
-        <small *ngIf="subtitle.touched && subtitle.invalid" 
+        <small *ngIf="(subtitle.touched && subtitle.invalid) || hasWrongSubtitleFormat" 
             class="text-danger">*Subtitle length must be between 50 and 1000</small>
       </div>
 
@@ -57,8 +57,8 @@
         <label for="description" class="form-label">Description</label>
         <input type="text" class="form-control" id="description" #description="ngModel" name="description" 
             minlength="50" maxlength="1000" required ngModel/>
-        <small *ngIf="description.touched && description.invalid" 
-            class="text-danger">*Subtitle length must be between 50 and 1000</small>
+        <small *ngIf="(description.touched && description.invalid) || hasWrongDescriptionFormat" 
+            class="text-danger">*Description length must be between 50 and 1000</small>
       </div>
 
       <button type="submit" class="btn btn-primary d-block w-100">Submit</button>
