@@ -10,24 +10,24 @@ import { Observable, Subscriber } from 'rxjs';
 export class MovieFormComponent {
   file: any;
   base64code!: any;
-  hasWrongFileSize: boolean = false;
+  hasWrongFileFormat: boolean = false;
+  fileExtensionList: string[] = ['png', 'jpg'];
 
   constructor() { }
 
   onSubmit(form: NgForm) {
-    console.log(form.value);
-
-    console.log(this.file.size / 1024);
     let fileSize: number = this.file.size / 1024;
+    let fileExtension: string = this.file.name.split('.')[1];
 
-    if(fileSize > 200)
+    if(fileSize <= 200 && this.fileExtensionList.includes(fileExtension))
     {
-      this.hasWrongFileSize = true;
+      this.hasWrongFileFormat = false;
     }
-    
+    else 
+    {
+      this.hasWrongFileFormat = true;
+    }
 
-    if(form.invalid)
-      console.log("Invalid xD");
   }
 
   getImage(event: any)
@@ -38,13 +38,6 @@ export class MovieFormComponent {
     console.log(this.file.name);
     console.log(this.file.size);
 
-    if(this.file.size < 47)
-    {
-      this.hasWrongFileSize = true;
-      return;
-    }
-      
-    this.hasWrongFileSize = false;
     this.convertToBase64(this.file);
   }
 
@@ -53,10 +46,10 @@ export class MovieFormComponent {
       this.readFile(file, subscriber);
     });
     observable.subscribe((d) => {
-      console.log(d)
       this.base64code = d
     })
   }
+
   readFile(file: File, subscriber: Subscriber<any>) {
     const filereader = new FileReader();
     filereader.readAsDataURL(file);
