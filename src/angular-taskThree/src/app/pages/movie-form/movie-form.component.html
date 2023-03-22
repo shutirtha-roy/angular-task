@@ -1,3 +1,14 @@
+<div class="mt-4 d-flex">
+  <div class="card m-1" *ngFor="let movie of movieList" style="width: 18rem;">
+    <img [src]="movie.photoUpload" class="card-img-top" width="30px" height="100px" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{ movie.title }}</h5>
+      <p class="card-text">Subtitle: {{ movie.subtitle }}</p>
+      <p class="card-text">Description: {{ movie.description }}</p>
+    </div>
+  </div>
+</div>
+
 <div class="mt-4">
     <form (ngSubmit)="onSubmit(myForm)" #myForm="ngForm">
       <div class="mb-3">
@@ -13,7 +24,7 @@
         <input type="file" (change)="getImage($event)" class="form-control" id="photoUpload" 
         name="photoUpload" #photoUpload="ngModel" ngModel size="4" required ngModel/>
         <small *ngIf="hasWrongFileFormat" 
-            class="text-danger">*Image length must be between 50 and 1000</small>
+            class="text-danger">*Image size must be exceed 200kb.</small>
       </div>
 
       <div class="mb-3">
@@ -32,8 +43,6 @@
             class="text-danger">*Subtitle length must be between 50 and 1000</small>
       </div>
 
-      <!-- <img [src]="base64code" width="200px" height="200px" alt="" /> -->
-  
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-primary d-block w-100">Submit</button>
     </form>
 </div>

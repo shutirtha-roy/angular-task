@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Observable, Subscriber } from 'rxjs';
 import { MovieService } from 'src/app/services/movie.service';
+import { IMovie } from 'src/assets/data/IMovie';
 
 @Component({
   selector: 'app-movie-form',
@@ -13,6 +14,7 @@ export class MovieFormComponent {
   base64code!: any;
   hasWrongFileFormat: boolean = false;
   fileExtensionList: string[] = ['png', 'jpg'];
+  movieList: IMovie[] = this.movieService.moviesList;
 
   constructor(private movieService: MovieService) { }
 
@@ -20,7 +22,7 @@ export class MovieFormComponent {
     let fileSize: number = this.file.size / 1024;
     let fileExtension: string = this.file.name.split('.')[1];
 
-    if(fileSize <= 200 && this.fileExtensionList.includes(fileExtension))
+    if(fileSize <= 200 && this.fileExtensionList.includes(fileExtension.toLowerCase()))
     {
       this.hasWrongFileFormat = false;
     }
@@ -31,8 +33,6 @@ export class MovieFormComponent {
     }
     
     this.movieService.createMovie(form.value.title, this.base64code, form.value.subtitle, form.value.description);
-
-    console.log(this.movieService.moviesList);
   }
 
   getImage(event: any)
@@ -52,6 +52,7 @@ export class MovieFormComponent {
     });
     observable.subscribe((d) => {
       this.base64code = d
+      console.log(d);
     })
   }
 
