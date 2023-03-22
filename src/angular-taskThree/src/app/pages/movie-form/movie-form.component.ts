@@ -12,7 +12,10 @@ import { IMovie } from 'src/assets/data/IMovie';
 export class MovieFormComponent {
   file: any;
   base64code!: any;
+  hasWrongTitleFormat: boolean = false;
   hasWrongFileFormat: boolean = false;
+  hasWrongSubtitleFormat: boolean = false;
+  hasWrongDescriptionFormat: boolean = false;
   fileExtensionList: string[] = ['png', 'jpg'];
   movieList: IMovie[] = this.movieService.moviesList;
 
@@ -22,6 +25,15 @@ export class MovieFormComponent {
     let fileSize: number = this.file.size / 1024;
     let fileExtension: string = this.file.name.split('.')[1];
 
+    if(form.value.title.length >= 2 && form.value.title.length <= 12)
+    {
+      this.hasWrongTitleFormat = false;
+    }
+    else
+    {
+      this.hasWrongTitleFormat = true;
+    }
+
     if(fileSize <= 200 && this.fileExtensionList.includes(fileExtension.toLowerCase()))
     {
       this.hasWrongFileFormat = false;
@@ -29,6 +41,28 @@ export class MovieFormComponent {
     else 
     {
       this.hasWrongFileFormat = true;
+    }
+
+    if(form.value.subtitle.length >= 50 && form.value.subtitle.length <= 1000)
+    {
+      this.hasWrongSubtitleFormat = false;
+    }
+    else
+    {
+      this.hasWrongSubtitleFormat = true;
+    }
+
+    if(form.value.description.length >= 50 && form.value.description.length <= 1000)
+    {
+      this.hasWrongDescriptionFormat = false;
+    }
+    else
+    {
+      this.hasWrongDescriptionFormat = true;
+    }
+
+    if(this.hasWrongFileFormat || this.hasWrongTitleFormat || this.hasWrongSubtitleFormat || this.hasWrongDescriptionFormat)
+    {
       return;
     }
     
@@ -38,11 +72,6 @@ export class MovieFormComponent {
   getImage(event: any)
   {
     this.file = event.target.files[0];
-    console.log(event.target.files)
-    console.log(this.file);
-    console.log(this.file.name);
-    console.log(this.file.size);
-
     this.convertToBase64(this.file);
   }
 
