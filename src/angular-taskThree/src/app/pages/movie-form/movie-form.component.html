@@ -40,7 +40,7 @@
       <div class="mb-3">
         <label for="photoUpload" class="form-label">PhotoUpload</label>
         <input type="file" (change)="getImage($event)" class="form-control" id="photoUpload" 
-        name="photoUpload" #photoUpload="ngModel" ngModel size="4" required ngModel/>
+        name="photoUpload" #photoUpload="ngModel" required ngModel/>
         <small *ngIf="hasWrongFileFormat" 
             class="text-danger">*Image size must not be exceed 200kb.</small>
       </div>
