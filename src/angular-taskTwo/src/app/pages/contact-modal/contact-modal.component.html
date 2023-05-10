@@ -1,0 +1,22 @@
+<h1 class="text-center">Welcome to Contact Modal.</h1>
+
+<ng-template #content let-modal>
+	<div class="modal-header">
+		<h4 class="modal-title" id="modal-basic-title">Contact update</h4>
+		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+	</div>
+	<div class="modal-body">
+		<form>
+			Contact update content
+		</form>
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-outline-dark" (click)="modal.close('Contact Save click')">Contact Save</button>
+	</div>
+</ng-template>
+
+<button class="btn btn-lg btn-outline-primary" (click)="open(content)">Launch Contact Modal</button>
+
+<hr />
+
+<pre>{{ closeResult }}</pre>
